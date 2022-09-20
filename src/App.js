@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import { useEffect,useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const[items,SetItem]= useState([]);
+  useEffect(() => {
+    const name= ['Ashik','Emon'];
+    SetItem(name);
+    console.log(items);
+
+  } ,[])
+   
+  return(
+    <div style={{margin:'30'}}>
+    <h3>name</h3>
+    <ul>
+      {items.map(item=>(
+        <li key={item}>
+          {item}
+          
+          </li>
+      ))}
+      
+      </ul>
+    
+      </div>
+
+      }
+
+  
 
 export default App;
